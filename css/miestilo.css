@@ -1,0 +1,1983 @@
+
+    *{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+header {
+    width: 100%;
+    height: 100px;
+    background: #a0a0a0;
+    color: white;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    position: fixed;
+}
+
+
+
+
+header navbar{
+    float: right;
+    margin-right: 140px;
+	
+}
+
+
+header a{
+   color: #fff;
+    text-decoration-line: none;
+}
+
+
+
+.contenido {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    
+}
+
+.contenido h3{
+    font-weight: 100;
+}
+
+.contenido p{
+    text-align: left;
+}
+
+footer {
+	background: #1F1E1E;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+    margin-top: 100px;    
+}
+
+footer p {
+		margin: 0;
+}
+	
+footer a {
+		color: #fff;
+}
+
+
+
+
+
+
+/*.div__file
+{
+
+    position: relative;
+    margin:50px;
+    padding: 10px;
+    background-color: #0074D9;
+    --webkit-border-radius:5px;
+    --webkit-border-radius:5px;
+    --webkit-border-radius:5px;
+}
+
+
+#inputfile
+{
+
+position: absolute;
+top: 0px;
+right:0px;
+left:0px;
+bottom:0px;
+width: 100%;
+height: 100%;
+display:none;
+
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+/*------------------------------MENU INDEX ------------------------------------------------------*/
+
+
+header{
+
+    width: 100%;
+    height: 180px;
+    position: sticky;
+    background: #D4AC0D;
+    top:0;
+    
+}
+
+section
+{
+margin-top: 50px;
+height: auto;
+
+}
+
+
+#contacto
+{
+    text-decoration: none;
+    list-style: none;
+    color:white;
+    
+}
+
+a{
+    
+}
+
+
+.menu{
+    width: 100%;
+    height: 50px;
+    margin-top:30px;
+    display: flex;
+    perspective: 200px;
+    background:#F1C40F ;
+    color:white;
+    bottom: 0;
+    margin-top: 90px;
+   
+    
+}
+
+
+
+
+.menu ul{
+    display: flex;
+    margin: auto;
+ 
+}
+
+.menu li{
+    list-style: none;
+    padding: 10px 25px;
+  
+    
+    
+    
+    
+}
+
+.menu li:hover{
+    background: rgba(0,0,0,0.5);
+    color: white;
+    cursor: pointer;
+    transition: all 300ms;    
+}
+
+
+
+.menu ul li ul{
+    *display: none;
+    flex-direction: column;
+    position: absolute;
+    background: #D4AC0D;
+    margin-top: 15px;
+    transform: rotateY(240deg) scale(0);
+    transition: all 1s;
+    box-shadow: 1px 1px 10px 0px black;
+}
+
+.menu ul li:hover > ul{
+    transform: rotateY(0deg) scale(1);
+    transition: all 1s;
+}
+
+.menu ul li ul:before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 8px solid #D4AC0D;
+    position: absolute;
+    margin-top: -8px;
+    margin-left: 20px;
+}
+
+.menu ul li ul li ul li{
+    position: relative;
+}
+.menu ul li ul li:hover > ul{
+    transform: rotateY(0deg) scale(1);
+}
+
+.menu ul li ul li ul{
+    right: -90px;
+    top: 36px;
+    background: #b87113;
+}
+
+.menu ul li ul li ul:before{
+    position: absolute;
+    border-bottom: 8px solid #b87113;
+    margin-top: 18px;
+    margin-left: -14px;
+    transform: rotate(-90deg);
+}
+
+
+
+.banner {
+    width: 100%;
+    padding: 9rem 3rem;
+    text-align: center;
+    background: url("../img/fondo.jpg");
+    background-color:#ffff;
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    color: #f1f1f1;
+}
+
+.container {
+    width: 100%;
+    height: 140px;
+    background:#ffffff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0px;
+    
+
+}
+
+figure{
+    
+    height:80px;
+    text-align: center;
+    margin:auto;
+    object-fit: cover;
+   
+}
+
+.logo {
+    text-align: center;
+    width: 120px;
+    height:100px;
+    border-radius:20px;
+    object-fit:cover;
+     
+}
+
+.logo:hover
+{
+    box-shadow: #F1C40F 0px 0px 20px 5px ;
+    transition: .6s;
+    
+}
+
+
+
+.item-options {
+    color: #000000;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+}
+
+
+.item-options:hover{
+    
+    color: #003bff;
+    border-bottom:rgba(0, 255, 78, 0.5) solid 3px;
+    transition:300ms;
+    padding-bottom: 8px;
+}
+
+
+.item-productos:hover
+{
+    
+    color:white;
+    cursor:pointer;
+}
+
+
+
+.item-productos{
+    display:none;
+    flex-direction: column;
+    position: relative;
+    background-color: #0074D9;
+    
+}
+
+.containerbusqueda
+{
+    
+    width: 300px;
+    
+}
+
+.buscar
+{
+    display: flex;
+    align-items: center;
+    height:50px;
+    background: white;
+    border-radius:10px;
+    box-sizing: border-box;
+
+}
+
+
+#buscartexto{
+    
+border:none;
+background: none;
+    outline:none;
+    color:#D4AC0D;
+    font-size:20px;
+    float:left;
+    line-height:60px;
+    transition:.3s;
+    width:0px;
+  
+}
+
+
+
+
+
+#boton
+{
+  width: 40px;  
+  height: 40px;
+  text-decoration: none;
+  color:#F1C40F;
+  font-size: 30px;
+   
+}
+
+.prueba
+{
+    margin: auto;
+    margin-right: 180px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+
+.iconocarrito
+{
+
+height: 50px;
+width: 50px;
+text-align: center;
+margin-top: 12.5px;
+
+}
+
+
+#iconocarrito
+{
+
+height: 25px;
+width: 25px;
+font-size: 20px;
+border-radius:20px;
+
+}
+
+
+
+#iconocarrito:hover
+{
+
+    text-decoration: none;
+    list-style: none;
+    color:white;
+
+}
+
+
+
+
+#numerocompra
+{
+   
+    width: 15px;
+height: 15px;
+border-radius:50%;
+background: rgb(254, 50, 50);
+color:white;
+font-size: 10px;
+margin-left: 30px;
+top:500px;
+
+
+
+}
+
+
+
+
+@media screen and (min-width:480px) 
+{
+    .buscar:hover > #buscartexto
+    {
+        width: 180px;
+        
+    }
+    
+    
+}
+
+
+
+
+
+/*--------------------------Footer--------------------*/
+
+
+
+
+
+
+footer{
+    font-family: sans-serif;
+    background: #202620;
+    width: 100%;
+    color:white;
+   
+   
+    
+}
+
+.container-footer-all
+{
+    
+    width: 100%;
+    max-width: 1200px;
+    padding:40px;
+    
+}
+
+
+.container-mapa
+{
+   margin: auto;
+    
+}
+
+
+
+.container-body
+{
+    
+    display:flex;
+    justify-content: space-between;
+}
+
+.colum1
+{
+    max-width: 400px;
+    
+}
+
+.colum1 h1
+{
+    font-size: 22px;
+    
+}
+
+.colum1 p 
+{
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+ 
+}
+
+.colum2
+{
+    max-width:400px;
+    
+    
+}
+
+.colum2 h1
+{
+    
+    font-size: 22px;
+    
+}
+
+.colum2 .row
+{
+    
+    margin-top: 20px;
+    display: flex;
+    
+}
+
+
+.row img
+{
+    width:36px;
+    height:36px;
+    
+    
+}
+
+
+.row label
+{
+    
+    margin-top:10px;
+    margin-left:10px;
+    color:#C7C7C7;
+    
+}
+
+.colum3
+{
+    
+    max-width: 400px;
+    
+}
+
+
+.colum3 h1
+{
+    
+    font-size: 22px;
+}
+
+
+.row2
+{
+    
+    margin-top: 20px;
+    display: flex;
+}
+
+
+.row2 img
+{
+    
+    width: 36px;
+    height: 36px;
+    
+}
+
+.row2 label
+{
+    margin-top:10px;
+    margin-left: 20px;
+    max-width: 1600px;
+}
+
+
+#afooter{
+text-decoration: none;
+color:white;
+}
+
+#afooter:hover
+{
+    
+    border-bottom:solid 1px white;
+    transition:.3s;
+    
+}
+
+#iconohorario
+{
+ 
+    font-size: 36px;
+}
+
+
+.container-footer
+{
+    
+    width: 100%;
+    background: #101010;
+    display:flex;
+    justify-content:space-between;
+}
+
+.footer
+{
+    margin: auto;
+    display:flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding:20px;
+}
+
+
+.copyright 
+{
+    color:#C7C7C7;
+    
+}
+
+
+.copyright a
+{   
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.information a
+{   
+    text-decoration: none;
+    color:#C7C7C7;
+}
+
+@media screen and (max-width:715px)
+{
+    
+    .container-body
+    {
+        flex-wrap:wrap;
+        
+    }
+    
+    .colum2,
+    .colum3
+    {
+        
+        margin-top: 40px;
+    }
+    
+    #mapa
+    {
+        width:70%;
+        
+        
+    }
+    
+    
+}
+
+
+#txtubicacion
+{
+    font-size: 22px;
+    
+}
+
+
+ #mapa
+    {
+        margin: auto;
+        margin-left:25px;
+    
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------CONTACTO------------------------------------------------*/
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+
+
+
+
+.formcontacto{
+    
+    height:auto;
+    width:900px;
+    padding:20px 0;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    animation: desplazamientocontacto 2s ;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow:  black 0px 0px 20px 10px;
+    border-radius:20px;
+}
+
+
+.formulariocontacto
+{
+    
+    width: 100%;
+    margin: auto;
+    
+}
+
+
+.formulariocontacto .grupo
+{
+    
+    margin: 45px;
+    height: 50px;
+    
+}
+
+
+.formulario__input,.formulario__label, .formulario__submit {
+    display:block;
+    
+}
+
+.formulario__input{
+    
+    padding:15px 0px;
+    border: none;
+    margin:20px;
+    border-radius:20px;
+    background: transparent;
+    outline: none;
+    display:block;
+    color:white;
+    
+}
+
+.formulario__label
+{   
+    top:0;
+    left:0;
+    
+}
+
+.formulario__label__contacto
+{
+
+
+padding:20px;
+
+}
+
+
+.formulario__submit__contacto{
+    
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 50px;
+    border:none;
+   
+}
+
+.formulario__input:hover
+{
+    border-bottom: solid 3px #F1C40F;
+    transition: .3s;
+    
+}
+
+
+
+.formulario__submit:hover
+{
+    
+    background:rgb(0, 150, 214);
+    
+}
+
+
+
+#fotosindex
+{
+    
+    object-fit:cover;
+    height:200px;
+    width: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+    
+}
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------NOSOTROS------------------------------------------*/
+
+
+
+
+
+
+
+
+
+.container-nosotrosinicio
+{
+    width: 100%;
+    height: 1200px;
+    display:flex;
+   
+    
+}
+
+
+
+
+
+
+.infonosotros
+{
+    margin-top: 200px;
+    width: 50%;
+    
+    
+}
+
+ 
+
+
+
+.infonosotros li
+{
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+
+#iconolistas
+{
+    margin-top:20px;
+    font-size: 20px;
+    color: #0074D9 ;
+    
+}
+
+.columna2nosotrosindex
+{
+    margin-top:190px;
+    float:left;
+    width: 50%;
+}
+
+.columna2nosotrosindex p{
+    
+ margin-top: 30px;
+    
+    
+    }
+.form{
+    
+    height:650px;
+    padding:20px 0;
+    width: 100%;
+    margin:left;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: black 0px 0px 0px 0px;
+    border-radius:20px;
+}
+
+
+.formularionosotros
+{
+    
+    width: 100%;
+    margin: auto;
+    float:left;
+    
+}
+
+
+.formularionosotros .gruponosotros
+{
+    
+    margin: 45px;
+    height: 50px;
+    
+}
+
+
+.formulario__input__nosotros,.formulario__label__nosotros, .formulario__submit__nosotros {
+    display:block;
+    
+}
+
+.formulario__input__nosotros{
+    
+    padding:15px 0px;
+    border: none;
+    width: 500px;
+    margin:20px;
+    border-radius:20px;
+    background: transparent;
+    outline: none;
+    display:block;
+    color:white;
+    
+}
+
+.formulario__label__nosotros
+{   
+    top:0;
+    left:0;
+    
+}
+
+.formulario__submit__nosotros{
+    
+    padding:15px;
+    margin-top: 120px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+   
+}
+
+.formulario__input__nosotros:hover
+{
+    border-bottom: solid 5px #0074D9;
+    transition: .3s;
+    
+}
+
+
+
+.formulario__submit__nosotros:hover
+{
+    
+    background:rgba(0, 177, 255, 0.6);
+    
+}
+
+
+
+.container-nosotros
+{
+    
+    margin-bottom: 150px;
+    margin-top: 150px;
+    
+    
+}
+
+
+
+
+
+.contenedor-nosotros
+{
+    background: #F1C40F;
+    width: 92%;
+    padding:50px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    
+    
+    
+}
+
+
+#imgnosotros
+{
+   width:200px;
+    height: 200px;
+    
+    
+}
+
+.icono
+{
+    width: 33%;
+    margin-left: 200px;
+  
+}
+
+.icono-nosotros
+{
+   
+ display:inline-block;
+ margin-bottom: 00px;
+ margin-top: 50px; 
+
+ 
+}
+
+
+
+/*----------------------------------------------ENTREGAS------------------------------------------*/
+
+
+
+
+#imagenesentregas
+{
+    
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+/*----------------------------------------------MEDIOS DE PAGO-------------------------------------*/
+
+
+
+#imagenmedios
+{
+    
+    margin-top: 50px;
+    margin-bottom:50px ;
+    height: 150px;
+    width: 250px;
+    object-fit: cover;
+}
+
+
+
+
+/*------------------------------Login  ---------------------------------*/
+
+.formlogin
+{
+
+    height: 450px;
+    width:800px;
+    padding:20px 0;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    animation: desplazamientocontacto 2s ;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: black 0px 0px 40px 10px;
+    border-radius:20px;
+
+}
+
+.formulario__input__login{
+    
+    padding:15px 0px;
+    border: none;
+    margin:20px;
+    border-radius:20px;
+    background:black;
+    outline: none;
+    display:block;
+    color:white;
+    font-size: 15px;
+    
+}
+
+.botonessesion{
+
+display:flex;
+margin-top: 100px;
+
+}
+
+
+#btnregistrarse
+{
+
+color:white;
+background: rgb(0, 160, 13);
+padding:15px;
+border-radius:12px;
+margin-left: 20px;
+text-decoration: none;
+border: none;
+font-weight: 600;
+
+}
+
+#btnregistrarse:hover
+{
+
+background: rgb(51, 158, 60);
+}
+
+
+
+.formulario__submit__login{
+    
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border:none;
+}
+
+.formulario__label__login
+{
+
+
+padding:20px;
+
+}
+
+
+
+
+/*-----------------------------------Productos-----------------------------------------------*/
+
+
+
+
+
+
+#imagenesproductos
+{
+    height:200px;
+    border-radius:0px 0px 0px 0px;
+    object-fit: cover;
+    
+}
+
+
+#txtcomprar
+{
+    
+    border-radius:0px 0px 12px 12px;
+}
+
+
+
+.products-list{
+	width: 82%;
+	display: flex;
+	flex-wrap: wrap;
+    height: auto;
+    cursor:pointer;
+    margin-top: 60px;
+   
+}
+
+
+.products-list .product-item{
+	width: 22%;
+	margin-left: 1%;
+	margin-bottom: 25px;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.22);
+	display: flex;
+    border-radius: 0px 0px 12px 12px;
+	flex-direction: column;
+	align-items: center;
+	align-self: flex-start;
+	transition: all .4s;
+   
+     
+}
+
+.products-list .product-item img{
+	width: 100%;
+   border-radius:12px;
+}
+
+
+
+.product-item:hover{
+ 
+   transition: .3s;
+    box-shadow:  #0074D9 0px 0px 12px 1px;
+}
+
+
+.products-list .product-item a{
+	display: block;
+	width: 100%;
+	padding: 8px 0;
+	background: #D4AC0D;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+
+#btn-eliminar
+{
+
+text-decoration: none;
+color:white;
+background: rgb(252, 80, 80);
+height: 30px;
+width: 20px;
+text-align:center;
+font-size: 30px;
+border-radius: 10px 30px 30px 30px;
+font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1100px){
+	.products-list .product-item{
+		width: 30.3%;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.category_list,
+	.products-list{
+		width: 100%;
+	}
+
+	.category_list{
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.category_list .category_item{
+		align-self: flex-start;
+		width: 15%;
+		font-size: 14px;
+	}
+
+	.products-list .product-item{
+		margin-left: 4.5%;
+	}
+
+	.products-list .product-item:nth-child(3n+1){
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 700px){
+	.category_list{
+		flex-direction: column;
+	}
+	.category_list .category_item{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 600px){
+
+	.products-list .product-item{
+		width: 47.5%;
+	}
+
+	.products-list .product-item:nth-child(3n+1){
+		margin-left: 4.5%;
+	}
+
+	.products-list .product-item:nth-child(2n+1){
+		margin-left: 0px;
+	}
+
+}
+
+@media screen and (max-width: 350px){
+	.products-list .product_item{
+		width: 100%;
+		margin-left: 0px;
+	}
+}
+
+
+.category_item:hover{
+    
+    transition:.3s;
+}
+
+
+/*-------------------------- Detalles productos ----------------*/
+
+
+
+
+.container_detalles
+{
+
+display: flex;
+width: 100%;
+margin-top: 100px;
+margin-bottom:200px;
+
+}
+
+.product{
+
+width: 100%;   
+
+}
+
+.detalle_producto
+{
+
+width: 100%;
+margin-left: 100px;
+}
+
+#imagenesdetalles
+{
+
+width: 300px;
+height: 300px;
+object-fit: cover;
+
+}
+
+#txtprecio
+{
+
+font-size: 40px;
+color:rgb(2, 153, 2);
+}
+
+.selecttalle
+{
+    padding:20px 0;
+    width: 25%;
+    margin:left;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: black 0px 0px 0px 0px;
+    border-radius:20px;
+    margin-bottom: 20px;
+
+}
+
+.selectcolor
+{
+
+    padding:20px 0;
+    width: 25%;
+    margin:left;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: black 0px 0px 0px 0px;
+    border-radius:20px;
+    margin-bottom: 20px;
+
+}
+
+#txtmarca{
+
+font-size: 30px;
+
+}
+
+#txtdescripcion
+{
+padding:20px;
+font-weight: 500;
+}
+
+
+label
+{
+margin-bottom: 10px;
+
+}
+
+
+#btnañadir
+{
+
+background: #4a74fc;
+color:white;
+padding: 20px 20px;
+font-weight:500;
+border-radius:20px;
+border:solid white 1px;
+cursor:pointer;
+list-style: none;
+text-decoration: none;
+}
+
+#btnañadir:hover
+{
+
+background: white;
+color:#4a74fc;
+transition:0.3s;
+border:solid #4a74fc 1px;
+}
+
+.formulario__submit__detalles
+{
+
+background: #4a74fc;
+color:white;
+padding: 20px 20px;
+font-weight:500;
+border-radius:20px;
+border:solid white 1px;
+cursor:pointer;
+list-style: none;
+text-decoration: none;
+}
+
+
+
+
+/*-------------------------- Añadir al carrito ----------------*/
+
+#imagenescarrito
+{
+width:300px;
+height:300px ;
+
+
+}
+
+
+#txtnombrecarrito
+{
+
+font-size: 20px;
+
+}
+
+
+
+#txtpreciocarrito
+{
+
+font-size: 18px;
+
+}
+
+
+
+
+#txtcantidadcarrito
+{
+
+font-size: 20px;
+
+}
+
+.subtotal
+{
+
+font-size: 25px;
+
+}
+
+#total
+{
+
+font-size: 40px;
+
+}
+
+
+.producto
+{
+width: 100%;
+
+margin-bottom: 100px;
+
+
+}
+
+.cantidad
+{
+
+    padding:15px 0px;
+    border: none;
+    margin:20px;
+    border-radius:15px;
+    background:rgba(0, 0, 0, 0.9);
+    box-shadow:#F1C40F 0px 0px 10px 5px ;
+    outline: solid #F1C40F 5px;
+    display:block;
+    color:white;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+#btncomprar
+{
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    margin-top: 50px;
+
+
+}
+
+#vercatalogo
+{
+
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    margin-top: 500px;
+
+
+}
+
+
+.eliminar
+{
+    padding:10px;
+    border-radius:12px;
+    background:rgb(255, 66, 66);
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 625px;
+    
+}
+
+.eliminar:hover
+{
+    
+color:white;
+
+}
+
+.container-eliminar
+{
+
+margin:auto;
+
+
+
+}
+
+.textarea__carrito
+{
+    width: 500px;
+    height: 200px;
+    padding:20px;
+    border: none;
+    margin:20px;
+    border-radius:15px;
+    background: rgba(0,0,0,0.8);
+    outline: none;
+    display:block;
+    color:white;
+
+
+
+
+}
+
+
+
+.formulario__submit__carrito
+{
+
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    margin-top: 50px;
+    border:none;
+
+
+
+
+}
+
+
+
+
+
+/*---------------Agregar-----------------------------*/
+
+.formagregar{
+    
+    height:auto;
+    width:800px;
+    padding:20px 0;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    animation: desplazamientocontacto 2s ;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: black 0px 0px 20px 10px;
+    border-radius:20px;
+}
+
+.selectmarca
+{
+    padding:20px;
+    width: 100%;
+    margin:left;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    border-radius:20px;
+    margin-bottom: 20px;
+
+}
+
+
+#txtagregueproducto
+{
+
+text-align: center;
+
+
+}
+
+.formulario__label__agregar
+{
+
+
+padding:20px;
+
+}
+
+
+
+.formulario__submit__agregar
+{
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 20px;
+    border:none;
+
+
+}
+
+.formulario__input,.formulario__label, .formulario__submit__agregar {
+    display:block;
+    
+}
+/*---------------Registrarse-----------------------------*/
+
+.formulario__input__registrarse
+{
+
+    padding:15px 0px;
+    border: none;
+    margin:20px;
+    border-radius:20px;
+    background:black;
+    outline: none;
+    display:block;
+    color:white;
+    font-size: 15px;
+
+
+}
+
+
+.formulario__submit__registrarse
+{
+
+    padding:15px;
+    border-radius:12px;
+    background:rgb(0, 160, 13);
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border:none;
+
+}
+
+
+#txtvolver{
+
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+
+#txtvolver:hover
+{
+
+background: #0074d9be;
+box-shadow:#0074D9 2px 2px 2px 2px ;
+
+}
+
+.formregistrarse
+{
+
+height:600px;
+width:900px;
+padding:20px 0;
+margin: auto;
+margin-top: 100px;
+margin-bottom: 100px;
+animation: desplazamientocontacto 2s ;
+background: rgba(0,0,0,0.8);
+color:white;
+box-shadow: black 0px 0px 40px 20px;
+border-radius:20px;
+
+}
+
+/*---------------Modificar-----------------------------*/
+
+
+
+
+.tablamodificar
+{
+
+margin-top: 50px;
+width: 100%;
+margin-bottom: 200px;
+border:solid 3px #0074D9;
+}
+
+td{
+
+   
+}
+
+
+#accionesh
+{
+
+text-decoration: none;
+
+}
+
+#iconoeditar
+{
+
+background: rgb(65, 65, 65);
+color:white;
+padding:10px;
+font-size: 15px;
+
+}
+
+#iconoeliminar
+{
+
+
+color:white;
+background: red;
+padding: 10px;
+font-size: 15px;
+
+}
+
+th
+{
+
+background: #0074D9;
+color:white;
+padding:10px;
+
+}
+
+
+#busqueda-modificar
+{
+    height:50px;
+    width:900px;
+    justify-content: center;
+    padding:10px 0;
+    margin-top: 60px;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: #F1C40F 3px 3px 20px 5px;
+    border-radius:20px;
+    border:solid 3px #F1C40F;
+    margin-left: 50px;
+    font-weight: 500;
+    font-size: 15px;
+
+}
+
+
+#busqueda-modificarcolores
+{
+    height:50px;
+    width:900px;
+    justify-content: center;
+    padding:10px 0;
+    margin-top: 60px;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: #F1C40F 3px 3px 20px 5px;
+    border-radius:20px;
+    border:solid 3px #F1C40F;
+    margin-left: 50px;
+    font-weight: 500;
+    font-size: 15px;
+
+}
+
+
+
+
+
+#busqueda-modificar:focus
+{
+   border: solid 3px #F1C40F;
+   border-radius:20px;
+   padding-left: 5px;
+
+}
+
+
+
+
+.container-busqueda
+{
+height: 100px;
+margin-left: 80px;
+
+}
+
+#txtbuscar
+{
+
+font-size: 20px;
+font-weight: 500;
+
+}
+
+.formulario__submit__modificar{
+    
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 50px;
+    border:none;
+   
+}
+
+.formulario__input,.formulario__label, .formulario__submit__modificar {
+    display:block;
+    
+}
+
+
+/*------------------------------------------Estados-------------------------------*/
+.formcontactoestados{
+    
+    height:500px;
+    width:900px;
+    padding:20px 0;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    animation: desplazamientocontacto 2s ;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: black 0px 0px 20px 10px;
+    border-radius:20px;
+}
+
+
+.formulario__submit__estados{
+    
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 100px;
+    border:none;
+   
+}
