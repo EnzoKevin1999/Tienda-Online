@@ -31,7 +31,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 <header>
     
  
-    
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -75,6 +75,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>

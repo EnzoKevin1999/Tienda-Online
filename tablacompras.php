@@ -26,7 +26,7 @@
 <header>
     
  
-    
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -72,6 +72,8 @@
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+				<a href="agregarmarca.php">     <li >Agregar Marca</li></a>
+				
                 <?php   } ?>
 
                     </ul>
@@ -92,7 +94,7 @@
 		   <div class="iconocarrito">  
             
 
-            <i class="fa-solid fa-cart-shopping" id="iconocarrito"></i>
+		   <a href="carritodecompras.php">  <i class="fa-solid fa-cart-shopping" id="iconocarrito"></i></a>
         
 
 
@@ -135,14 +137,14 @@
 	<center><h1>Últimas Compras</h1></center>
 	<table border="0px" width="100%" class="tablamodificar">	
 		<tr>
-		<td>Cliente</td>	
-		<td>Id Compra</td>
-			<td>Numero Venta</td>
-			<td>Fecha</td>
-			<td>Observaciones</td>
-			<td>Total</td>
-			<td>Estado</td>
-			<td>Acciones</td>
+		<th>Cliente</th>	
+		<th>Id Compra</th>
+			<th>Numero Venta</th>
+			<th>Fecha</th>
+			<th>Observaciones</th>
+			<th>Total</th>
+			<th>Estado</th>
+			<th>Acciones</th>
 		</tr>	
 
 		<?php
@@ -172,9 +174,9 @@
 		$re=mysqli_query($conexion,$consulta);
 
 			while ($f=mysqli_fetch_array($re)) {
-
+         
 				?>
-                
+       
 
 			
 					<tr>
@@ -187,19 +189,19 @@
 						<td><?php
 						if($f['Estado']=='Pendiente')
 						{
-                              echo "<p style='color:green;'>Pendiente</p>";
+                              echo "<p style='color:white;background:#42ae28;border-radius:20px;width: 100px;text-align:center;margin-top: 20px;'>Pendiente</p>";
 
 						}
 
 						if($f['Estado']=='Cancelado')
 						{
-                              echo "<p style='color:red;'>Cancelado</p>";
+                              echo "<p style='color:white;background:#ff5519;border-radius:20px;width: 100px;text-align:center;margin-top: 20px;'>Cancelado</p>";
 
 						}
 
 						if($f['Estado']=='Entregado')
 						{
-                              echo "<p style='color:blue;'>Entregado</p>";
+                              echo "<p style='color:white;background:#2e9aff;border-radius:20px;width: 100px;text-align:center;margin-top: 20px;'>Entregado</p>";
 
 						}
 						
@@ -208,20 +210,37 @@
 					</td>
                         <td>
 							<a href="detallescompras.php?Id=<?php echo $f['idCompra'];?>">Ver Detalles</a>
-							<?php if($tipo_usuario== 1) { 
+							<?php if($tipo_usuario== 1 && $f['nombre']=="Enzo") { 
                        ?>
 							<a href="estados.php?Id=<?php echo $f['idCompra'];?>">Ver Estados</a>
-
+                             
+							    
+							<a href="#" onclick="confirmarEliminacion(<?php echo $f['idCompra']; ?>)">Anular Compra</a>
+                             
 							<?php    }      ?>
 					</td>
 
 					</tr>
 			<?php		
 			}
+		
 		?>
 	</table>
 	</section>
 
-	
+
+
+
+
+	<script>
+
+function confirmarEliminacion(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta compra?")) {
+        window.location.href = "eliminarcompra.php?Id=" + id;
+    }
+}
+   
+
+	</script>
 </body>
 </html>

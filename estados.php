@@ -1,11 +1,21 @@
 <?php
 session_start();
+include "conexion.php";
+
 
 $usuario=$_SESSION['username'];
 
 $tipo_usuario=$_SESSION['tipo_usuario'];
 
 $Id= $_GET['Id'];
+
+$sql="SELECT Idestado FROM compras WHERE Id='$Id'";
+
+$resultado=mysqli_query($conexion,$sql);
+
+$f=mysqli_fetch_array($resultado);
+
+
 
 ?>
 
@@ -17,7 +27,7 @@ $Id= $_GET['Id'];
 <!DOCTPYPE html>
 <html lang= "es">
  <head> 
-    <title>VENTA DE ZAPATILLAS>>></title>
+    <title>Panel de administracion</title>
     
     <meta charset="utf-8"/>
 
@@ -61,7 +71,7 @@ $Id= $_GET['Id'];
 	 
      <header>
     
- 
+     <div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
     
        
@@ -107,6 +117,7 @@ $Id= $_GET['Id'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>
@@ -197,28 +208,31 @@ $Id= $_GET['Id'];
 
   <div class="grupo">
 
-    <label for="Nombre" class="formulario__label__contacto">
+    <p for="Nombre" class="formulario__label__contacto"> </p>
 
       Elija el estado
-<br>
 
-      <label for="Entregado">Pendiente</label>
-      <input type="radio" name="Estados" id="nombre" size="100px" value="7"
+
+      
+      <input type="radio" name="Estados" id="estado1" size="100px" value="7" class="custom-radio"
+        <?php if($f["Idestado"]=="7") {echo "checked";} else {echo "";}?>>
+        <label  for="estado1" class="radio-label pendiente">Pendiente</label>
+
+
+       
+
+        <input type="radio" name="Estados" id="estado2" size="100px"  value="8" class="custom-radio"
+        <?php if($f["Idestado"]=="8") {echo "checked";} else {echo "";}?>>
+        <label  for="estado2" class="radio-label entregado">Entregado</label>
+
+
+        
+
+        <input type="radio" name="Estados" id="estado3" size="100px"  value="9" class="custom-radio"
+        <?php if($f["Idestado"]=="9") {echo "checked";} else {echo "";}?>
         >
-<br>
+        <label  for="estado3" class="radio-label cancelado">Cancelado</label>
 
-        <label for="Entregado">Entregado</label>
-
-        <input type="radio" name="Estados" id="nombre" size="100px"  value="8"
-        >
-<br>
-
-        <label for="Entregado">Cancelado</label>
-
-        <input type="radio" name="Estados" id="nombre" size="100px"  value="9"
-        >
-<br>
-    </label>
 
 
   </div>

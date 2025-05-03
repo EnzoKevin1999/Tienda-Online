@@ -33,7 +33,10 @@ if($result && $result2 && $result3)
 else{
 
 
-    echo "Hubo un error";
+    echo "<script>
+    alert('Hubo un error al eliminar.');
+    window.location='productos.php';     
+    </script>"; 
 
 
 }

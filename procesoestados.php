@@ -33,7 +33,7 @@ if($ejecutar)
 
     echo '<script>
 
-    alert("Intentalo de nuevo no se puedo modificar");
+    alert("Intentalo de nuevo no se pudo modificar");
     window.location="tablacompras.php";
     </script>';
 

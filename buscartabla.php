@@ -81,11 +81,6 @@ while($fila=mysqli_fetch_assoc($resultado))
     
  
    
-<!--<td>  <a href='modificarproductos.php?Id=<?php /*echo $row['Id']; */?>' id='accionesh'> 
-<i class='fa-solid fa-pen' id='iconoeditar'></i>   </a>       
-              <a href='eliminarproductostabla.php?Id=<?php/* echo $row['Id'];*/ ?>'' id='accionesh'> <i class='fa-solid fa-trash-can' id='iconoeliminar'></i>   </a> </td>
-     
---> 
 
              
 

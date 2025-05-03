@@ -55,7 +55,7 @@
           Nombre:
 
 
-          <input type="text" name="nombre" id="nombre" size="80px" class="form-control" placeholder="Ej:Pedro"
+          <input type="text" name="nombre" id="nombre" size="80px" class="form-control" placeholder="Ej:Pedro" value="<?php echo isset($_POST['nombre']) ? $_POST['nombre'] : ''; ?>"
             required>
         </label>
 
@@ -71,7 +71,7 @@
           Correo:
 
           <input type="email" name="correo" id="correo" size="80px" class="form-control"
-            placeholder="Ej:Pedro1980@gmail.com" required>
+            placeholder="Ej:Pedro1980@gmail.com"  value="<?php echo isset($_POST['correo']) ? $_POST['correo'] : ''; ?>" required>
         </label>
 
 
@@ -88,7 +88,7 @@
           Usuario:
 
           <input type="text" name="usuario" id="usuario" size="80px" class="form-control"
-            placeholder="Pedro1234" required>
+            placeholder="Pedro1234" value="<?php echo isset($_POST['usuario']) ? $_POST['usuario'] : ''; ?>" required>
         </label>
 
 
@@ -104,7 +104,7 @@
           Contraseña:
 
 
-          <input type="password" name="contraseña" id="contraseña" size="80px" class="form-control"
+          <input type="password" name="contraseña" id="contraseña" size="80px" class="form-control" value="<?php echo isset($_POST['contraseña']) ? $_POST['contraseña'] : ''; ?>"
             required>
 
         </label>
@@ -134,7 +134,22 @@
 
 
 
+  <script>
+    setTimeout(function() {
+        const mensaje = document.getElementById('mensaje');
+        if (mensaje) {
+            mensaje.classList.add('fade-out');
+        }
+    }, 3000); 
 
+
+    setTimeout(function() {
+        const mensaje = document.getElementById('mensaje');
+        if (mensaje) {
+            mensaje.style.display = 'none';
+        }
+    }, 5500); 
+</script>
     
 </body>
 </html>

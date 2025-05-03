@@ -17,7 +17,6 @@ $password=$_POST['contraseña'];
 $consultausuarios="SELECT Id,nombre,correo,usuario,clave,tipo_usuario FROM usuarios WHERE usuario='$usuarios' AND clave='$password'" ;
 
 
-
 $resultado = mysqli_query($conexion,$consultausuarios);
 
 
@@ -26,14 +25,9 @@ if(mysqli_num_rows($resultado)> 0)
    
 $row=mysqli_fetch_assoc($resultado);
 
-//$pass_bd=$row['clave'];
 
-//$pass_c = sha1($password);
 
-//if($pass_bd==$pass_c)
-//{
-
-    $_SESSION['id_usuario']=$row['Id'];
+$_SESSION['id_usuario']=$row['Id'];
 
 $_SESSION['username']=$row['usuario'];
 
@@ -42,14 +36,7 @@ $_SESSION['nombre']=$row['nombre'];
 $_SESSION['tipo_usuario']=$row['tipo_usuario'];
 
 header("Location:paginaprincipal.php");
-//}
 
-//else
-//{
-
-//echo "la contraseña no coincide";
-
-//}
 
 
 
@@ -65,13 +52,10 @@ else
     background:rgb(255, 62, 62);
     color:white;
     position:relative;
-    top:625px;
-    ">No existe el usuario </h1>
+    top:700px;
+    " id="mensaje" class="mensaje">No existe el usuario </h1>
 <?php
 }
-
-
-
 
 
 
@@ -178,7 +162,22 @@ else
        </form>
 
 
-       
+       <script>
+        setTimeout(function() {
+            const mensaje = document.getElementById('mensaje');
+            if (mensaje) {
+                mensaje.classList.add('fade-out');
+            }
+        }, 3000); 
+
+
+        setTimeout(function() {
+            const mensaje = document.getElementById('mensaje');
+            if (mensaje) {
+                mensaje.style.display = 'none';
+            }
+        }, 5500); 
+    </script>   
 
 
 

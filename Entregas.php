@@ -34,7 +34,7 @@ $usuario=$_SESSION['username'];
 
 <header>
     
- 
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     <?php  echo "<p style='color:white;font-size: 20px;font-weight: 600;'>Bienvenido  $usuario </p>";           ?>
     
        

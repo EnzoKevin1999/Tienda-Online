@@ -20,7 +20,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.1.2-web/css/all.css"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Productos</title>
+    <title>Agregar Talles</title>
 </head>
 <body>
     
@@ -28,7 +28,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 <header>
     
  
-   
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -69,6 +69,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>
@@ -177,11 +178,18 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 
 
 
-
+<div class="botones">  
 
   <input type="submit" id="enviar" value="Agregar Talle" name="submit" class="formulario__submit__agregar">
 
 
+
+<a href="modificartalle.php" id="btnmodificar">Modificar Talles</a></div>
+
+
+
+
+</div>
 
 
 

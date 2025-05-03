@@ -24,7 +24,7 @@
 
 <header>
     
- 
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
   
     
        
@@ -47,7 +47,7 @@
           <div class="prueba">
            
             <ul>
-               <a href="paginaprincipal.php"> <li style="background: rgba(0,0,0,0.5);" >Inicio</li> </a>
+               <a href="paginaprincipal.php"> <li>Inicio</li> </a>
            
                <a href="productos.php"> <li>Productos
                 
@@ -55,7 +55,7 @@
                 </li>
                 </a>
                 
-                <a href="tablacompras.php" id="contacto"><li>Ver compras</li></a>
+                <a href="tablacompras.php" id="contacto"><li style="background: rgba(0,0,0,0.5);" >Ver compras</li></a>
                 <a href="contacto.php" id="contacto"><li>Contactos</li></a>
 
 				<?php  if($tipo_usuario==1){
@@ -70,6 +70,7 @@
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+				<a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>
@@ -111,31 +112,38 @@
 	<center><h1>Últimas Compras</h1></center>
 	<table border="0px" width="100%" class="tablamodificar">	
 		<tr>
-		<td>Nombre del producto</td>
-        <td>Marca</td>
-        <td>Color</td>
-        <td>Numero del talle</td>
-        <td>Cantidad</td>
-		<td>Precio Unitario</td>
-		<td>Subtotal</td>
+		<th>Nombre del producto</th>
+        <th>Marca</th>
+        <th>Color</th>
+        <th>Numero del talle</th>
+        <th>Cantidad</th>
+		<th>Precio Unitario</th>
+		<th>Subtotal</th>
 		</tr>	
 
 		<?php
-        //   session_start();
+      
 
- 
+          
 
 		$idusuario=$_SESSION['id_usuario'];
 		   
-		//$idcompra=$_SESSION['id_compra'];
+	
 
-			$re=mysqli_query($conexion,"SELECT det.nombre 'Producto', m.nombre 'Marca', c.nombre 'Color', t.numero 'Talle', det.cantidad 'Cantidad', det.precio_unitario 'Precio Unit', det.subtotal 'Subtotal'
-			FROM detalle_compra det 
-			INNER JOIN producto p ON det.Idproducto = p.id
-			INNER JOIN marca m ON p.Id_marca = m.Id
-			INNER JOIN color c ON c.Id = det.Idcolor
-			INNER JOIN talle t ON t.id = det.Idcolor
-			WHERE det.Idcompra =".$_GET['Id']);
+			$re=mysqli_query($conexion,"SELECT 
+		p.nombre AS 'Producto',
+		m.nombre AS 'Marca',
+		c.nombre AS 'Color',
+		t.numero AS 'Talle',
+		det.cantidad AS 'Cantidad',
+		det.precio_unitario AS 'Precio Unit',
+		det.subtotal AS 'Subtotal'
+	FROM detalle_compra det 
+	INNER JOIN producto p ON det.Idproducto = p.id
+	INNER JOIN marca m ON p.Id_marca = m.Id
+	INNER JOIN color c ON c.Id = det.Idcolor
+	INNER JOIN talle t ON t.id = det.Idtalle
+	WHERE det.Idcompra = " . intval($_GET['Id']) . "");
 
 			$numeroventa=0;
 

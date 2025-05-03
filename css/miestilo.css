@@ -70,38 +70,36 @@ footer a {
 
 
 
-
-
-
-/*.div__file
-{
-
-    position: relative;
-    margin:50px;
-    padding: 10px;
-    background-color: #0074D9;
-    --webkit-border-radius:5px;
-    --webkit-border-radius:5px;
-    --webkit-border-radius:5px;
+.inputfile {
+    display: none;
 }
 
-
-#inputfile
-{
-
-position: absolute;
-top: 0px;
-right:0px;
-left:0px;
-bottom:0px;
-width: 100%;
-height: 100%;
-display:none;
-
-
+.botonfile {
+    display: inline-block;
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
 
-*/
+.botonfile:hover {
+    background-color: #666;
+}
+
+.botonfile i {
+    margin-right: 8px;
+}
+
+#imagen-previa
+{
+
+width: 100px;
+height: 100px;
+
+}
 
 
 
@@ -1180,7 +1178,12 @@ padding:20px;
 
 }
 
-
+.mensaje {
+    transition: opacity 2s ease-out; 
+}
+.fade-out {
+    opacity: 0;
+}
 
 
 /*-----------------------------------Productos-----------------------------------------------*/
@@ -1533,7 +1536,7 @@ font-size: 25px;
 {
 
 font-size: 40px;
-
+text-align: center;
 }
 
 
@@ -1636,13 +1639,18 @@ margin:auto;
     outline: none;
     display:block;
     color:white;
+    margin: auto;
 
 
 
 
 }
 
+#txtobservaciones{
 
+text-align: center;
+
+}
 
 .formulario__submit__carrito
 {
@@ -1734,6 +1742,25 @@ padding:20px;
     display:block;
     
 }
+
+#btnmodificar{
+    padding:15px;
+    border-radius:12px;
+    background:#0074D9;
+    color:white;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 20px;
+    border:none;
+    margin-left: 20px;
+}
+
+.botones
+{
+display: flex;
+}
+
+
 /*---------------Registrarse-----------------------------*/
 
 .formulario__input__registrarse
@@ -1820,9 +1847,29 @@ margin-bottom: 200px;
 border:solid 3px #0074D9;
 }
 
-td{
+.tdacciones
+{
+float:right;
 
-   
+}
+
+.thnombre
+{
+text-align:right;
+
+}
+
+
+.tdnombre
+{
+
+    text-align:right;
+}
+.thacciones
+{
+
+text-align:right;
+
 }
 
 
@@ -1830,8 +1877,8 @@ td{
 {
 
 text-decoration: none;
-
 }
+
 
 #iconoeditar
 {
@@ -1903,6 +1950,46 @@ padding:10px;
 
 
 
+#busqueda-modificartalles
+{
+    height:50px;
+    width:900px;
+    justify-content: center;
+    padding:10px 0;
+    margin-top: 60px;
+    background: rgba(0,0,0,0.8);
+    color:white;
+    box-shadow: #F1C40F 3px 3px 20px 5px;
+    border-radius:20px;
+    border:solid 3px #F1C40F;
+    margin-left: 50px;
+    font-weight: 500;
+    font-size: 15px;
+
+}
+
+
+#busqueda-modificarmarca
+{
+
+    
+        height:50px;
+        width:900px;
+        justify-content: center;
+        padding:10px 0;
+        margin-top: 60px;
+        background: rgba(0,0,0,0.8);
+        color:white;
+        box-shadow: #F1C40F 3px 3px 20px 5px;
+        border-radius:20px;
+        border:solid 3px #F1C40F;
+        margin-left: 50px;
+        font-weight: 500;
+        font-size: 15px;
+    
+ 
+
+}
 
 
 #busqueda-modificar:focus
@@ -1981,3 +2068,50 @@ font-weight: 500;
     border:none;
    
 }
+
+
+.custom-radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .radio-label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-radio:checked + .radio-label {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+  }
+
+  .custom-radio:checked + .pendiente {
+    background-color:#42ae28;
+    color: white;
+  }
+  
+  .custom-radio:checked + .entregado {
+    background-color:#2e9aff ;
+    color: white;
+  }
+  
+  .custom-radio:checked + .cancelado {
+    background-color: #ff5519;
+    color: white;
+  }
+
+
+
+
+

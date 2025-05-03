@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "procesoagregar.php";
 include "conexion.php";
 
 $idusuario=$_SESSION['id_usuario'];
@@ -40,15 +39,9 @@ $datosobservaciones=$_POST['observaciones'];
 				)");
 
 
-			/* sacar la primera parte del for dejando solo el insert */	
+		
 			$ultimo_id = mysqli_insert_id($conexion); 
-			/*var_dump($ultimo_id);
-			var_dump("insert into compras(numeroventa,fecha,Idcliente,observaciones,Idestado,total) values(
-				".$numeroventa.",
-				'".date('Y-m-d')."',
-				".$idusuario.",	'',7,		
-				'".$totalTmp."'
-				)");*/
+		
 
 		
 		for($j=0; $j<count($arreglo);$j++){
@@ -64,17 +57,7 @@ $datosobservaciones=$_POST['observaciones'];
 				)");
 
 
-				/*var_dump("insert into detalle_compra(	Idcompra,Idproducto,Idcolor,Idtalle,cantidad,precio_unitario,subtotal,nombre	) values(
-					".$ultimo_id.",
-					".$arreglo[$j]['Id'].",
-					".$arreglo[$j]['IdColor'].",
-					".$arreglo[$j]['IdTalle'].",
-					".$arreglo[$j]['Cantidad'].",
-					".$arreglo[$j]['Precio'].",   
-					'".intval(($arreglo[$j]['Precio'])*$arreglo[$j]['Cantidad'])."'
-					".$arreglo[$j]['Nombre'].", 
-					)");
-					*/
+			
 		}
 
 

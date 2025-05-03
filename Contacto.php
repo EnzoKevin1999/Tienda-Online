@@ -1,9 +1,20 @@
 <?php
 session_start();
 
+include "conexion.php";
+
 $usuario=$_SESSION['username'];
 
 $tipo_usuario=$_SESSION['tipo_usuario'];
+$idusuario=$_SESSION['id_usuario'];
+
+$sql="SELECT * FROM usuarios WHERE Id='$idusuario'";
+
+$resultado=mysqli_query($conexion,$sql);
+
+$f=mysqli_fetch_array($resultado);
+
+
 ?>
 
 
@@ -27,7 +38,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.1.2-web/css/all.css"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Productos</title>
+    <title>Contacto</title>
 
 </head>
 
@@ -42,7 +53,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 <header>
     
  
-   
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -86,6 +97,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>
@@ -191,7 +203,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
           Nombre:
 
 
-          <input type="text" name="nombre" id="nombre" size="100px"  placeholder="Ej:Juan" class="form-control"
+          <input type="text" name="nombre" id="nombre" size="100px"  placeholder="Ej:Juan" class="form-control" value="<?php echo $f["nombre"]; ?>" readonly
             required>
         </label>
 
@@ -207,7 +219,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
           Correo:
 
           <input type="email" name="correo" id="correo" size="100px" class="form-control"
-            placeholder="Ej:Juan1980@gmail.com" required>
+            placeholder="Ej:Juan1980@gmail.com" value="<?php echo $f["correo"]; ?>" readonly required>
         </label>
 
 

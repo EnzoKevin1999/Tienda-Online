@@ -95,7 +95,7 @@ if(isset($_SESSION['carrito']))
 <!DOCTPYPE html>
 <html lang= "es">
  <head> 
-    <title>VENTA DE ZAPATILLAS>>></title>
+    <title>Carrito</title>
     
     <meta charset="utf-8">
     <!-- Bootstrap CSS -->
@@ -142,7 +142,7 @@ if(isset($_SESSION['carrito']))
 	 
      <header>
     
- 
+     <div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
     
        
@@ -174,12 +174,27 @@ if(isset($_SESSION['carrito']))
                 
                 <a href="tablacompras.php" id="contacto"><li>Ver compras</li></a>
                 <a href="contacto.php" id="contacto"><li>Contactos</li></a>
-               
                 <?php  if($tipo_usuario==1){
                     ?>
-                <a href="agregar.php">     <li>Agregar</li></a> 
-                <a href="modificar.php">     <li >Modificar</li></a>
-                <?php   } ?>
+
+                <li>Acciones
+                    
+                    <ul>
+                   
+                
+                   <a href="agregar.php">     <li>Agregar</li></a> 
+                   <a href="modificar.php">     <li >Modificar</li></a>
+                   <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
+                   <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                   <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
+                   <?php   } ?>
+   
+                       </ul>
+   
+                   
+            
+                   
+                   </li>
             </ul>
     
            
@@ -266,17 +281,20 @@ if(isset($_SESSION['carrito']))
                 
 			}
 			?>	
-                   <center> <label for="mensaje" class="formulario__label">Observaciones:
+          <?php  if($tipo_usuario==1){
+                    ?>         <label for="mensaje" class="formulario__label" id="txtobservaciones">Observaciones:
 
 <textarea type="text" maxlenght="800" size="300px" name="observaciones" id="mensaje" class="textarea__carrito"
 required> </textarea>
 </label>
-</center>
+
+<?php   } ?>
+
             <?php
 			}else{
-				echo '<center><h2>No has añadido ningun producto</h2></center>';
+				echo "<h2 style='margin-top: 50px;text-align:center;'>No has añadido ningun producto</h2>";
 			}
-			echo '<center><h2 id="total">Total: $'.$total.'</h2></center>';
+			echo '<h2 id="total">Total: $'.$total.'</h2>';
 			
             if($total!=0)
             {
@@ -517,7 +535,8 @@ required> </textarea>
 </footer> 
 	 
 	 
-	 
+
+
 </body>
 </html>
 	

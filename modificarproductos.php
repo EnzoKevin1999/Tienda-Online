@@ -39,14 +39,14 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.1.2-web/css/all.css"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Productos</title>
+    <title>Modificar Productos</title>
 </head>
 <body>
     
 
 <header>
     
- 
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
    
     
        
@@ -90,6 +90,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>
@@ -237,7 +238,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 
 <label for="mensaje" class="formulario__label__agregar">Descripcion:
 
-  <textarea type="text" maxlenght="400" name="descripcion" id="descripcion" class="form-control" 
+  <textarea type="text" maxlenght="400" name="descripcion" id="descripcion" class="form-control"  
    ><?php echo $f['descripcion']; ?> </textarea>
 </label>
 
@@ -258,11 +259,20 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 
 <div class="div__file">
 
-        
+<?php if ($f['imagen']): ?>
 
-      <input type="file" name="archivo" id="archivo" size="100px" class="form-control" id="inputfile" value="<?php echo $f['imagen']; ?>">
+  <input type="hidden" name="imagen_actual" value="<?php echo $f['imagen']; ?>"/>
+  
+<?php endif; ?>
 
+      <input type="file" name="imagen" id="archivo" size="100px" class="inputfile" id="inputfile" value="<?php echo $f['imagen']; ?>">
+      <label for="archivo" class="botonfile"><i class="fa fa-upload"></i> Elegir archivo</label>
+      
+      
       </div>
+      <img src="productos/<?php echo $f['imagen']; ?>" width="150" alt="Imagen actual" id="imagen-previa">
+      <br>
+      <span id="nombre-archivo" class="nombrearchivo"> <?php echo $f['imagen'] ? $f['imagen'] : 'Ningún archivo seleccionado'; ?></span>
     </label>
 
 
@@ -337,7 +347,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
       Precio:
 
       <input type="number" name="precio" id="precio" size="100px" class="form-control"
-        placeholder="Ej:Juan1980@gmail.com"  value="<?php echo $f['precio']; ?>"    >
+        value="<?php echo $f['precio']; ?>"    >
     </label>
 
 
@@ -641,7 +651,29 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 </footer> 
 
 
+<script>
+ document.getElementById('archivo').addEventListener('change', function() {
+   
+        var archivo = this.files[0];
+        
+       
+        if (archivo) {
+           
+            document.getElementById('nombre-archivo').textContent = archivo.name;
 
+          
+            var reader = new FileReader();
+            reader.onload = function(e) {
+            
+                document.getElementById('imagen-previa').src = e.target.result;
+            };
+            reader.readAsDataURL(archivo); 
+        } else {
+     
+            document.getElementById('nombre-archivo').textContent = 'Ningún archivo seleccionado';
+        }
+    });
+</script>
 			
 </body>
 </html>

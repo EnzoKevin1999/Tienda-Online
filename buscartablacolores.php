@@ -33,9 +33,9 @@ if(mysqli_num_rows($resultado)>0)
 
 <th>Id</th>
 
-<th>Nombre</th>
+<th class="thnombre">Nombre</th>
 
-<th>Acciones</th>
+<th class="thacciones">Acciones</th>
 
 
 
@@ -50,23 +50,19 @@ while($fila=mysqli_fetch_assoc($resultado))
     <tr>
     
         <td> <?php echo $fila['Id'];?></td>
-       <td><?php echo $fila['nombre'];?></td>
+       <td class="tdnombre"><?php echo $fila['nombre'];?></td>
      
         
-              <td>  <a href="modificarcolores.php?Id=<?php echo $fila['Id']; ?>" id="accionesh"> 
+              <td class="tdacciones">  <a href="pantallamodificarcolor.php?Id=<?php echo $fila['Id']; ?>" id="accionesh"> 
               <i class='fa-solid fa-pen' id='iconoeditar'></i>   </a>       
-                            <a href="eliminarcolores.php?Id=<?php echo $fila['Id']; ?>" id="accionesh"> <i class='fa-solid fa-trash-can' id='iconoeliminar'></i>   </a> </td>
+                            <a href="eliminarcolor.php?Id=<?php echo $fila['Id']; ?>" id="accionesh"> <i class='fa-solid fa-trash-can' id='iconoeliminar'></i>   </a> </td>
                            
                     
     </tr>
     
  
    
-<!--<td>  <a href='modificarproductos.php?Id=<?php /*echo $row['Id']; */?>' id='accionesh'> 
-<i class='fa-solid fa-pen' id='iconoeditar'></i>   </a>       
-              <a href='eliminarproductostabla.php?Id=<?php/* echo $row['Id'];*/ ?>'' id='accionesh'> <i class='fa-solid fa-trash-can' id='iconoeliminar'></i>   </a> </td>
-     
---> 
+
 
              
 

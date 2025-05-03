@@ -3,6 +3,7 @@ session_start();
 
 $usuario=$_SESSION['username'];
 
+$tipo_usuario=$_SESSION['tipo_usuario'];
 
 ?>
 
@@ -10,65 +11,125 @@ $usuario=$_SESSION['username'];
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+
+<!DOCTPYPE html>
+<html lang= "es">
+ <head> 
+    <title>VENTA DE ZAPATILLAS>>></title>
+    
+    <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/miestilo.css">
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.1.2-web/css/all.css"> 
-    <title>Productos</title>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
+   
 
-<header>
+</head>
+
+<body bgcolor="white">              
+   <!--   <header>
+          <div class= "header">
+		      <img src="CALZADO URBANO LUNA.jpg" width="200" heigth="100">
+		      <br>
+		     
+		
+				 <ul class="navbar">
+					 <li><a href="Quienes somos.html">Quienes somos</a></li>
+                     <li><a href="Entregas.html">Entregas</a></li>
+                     <li><a href="Medios de pago.html">Medios de pago</a></li>
+	     		     <li><a href="Contacto (deja tu comentario).html">Contacto (deja tu comentario)</a></li>
+					 <center><h1> CALZADO URBANO LUNA </h1></center>
+		             <center><p> "SIEMPRE EN MOVIMIENTO" </p></center>
+				  </ul>
+			  </nav>  
+		 </div>	
+	 </header>		  -->
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+     <header>
     
  
-    <?php  echo "<p style='color:white;font-size: 30px;font-weight: 600;'>Bienvenido  $usuario </p>";           ?>
+     <div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
        <figure>
-     <a href="paginaprincipal.php">
+     <a href="index.html">
        <img src="imagenes/CALZADOURBANOLUNA.png" class="logo" alt="">
        
   
       </a>
-       </figure>
-       
-       
+   
+        
+        <?php  echo "<p style='color:white;font-size: 30px;font-weight: 600;width:25%;'>Bienvenido  $usuario </p>";           ?>
+        
+        </figure>
+
+        
         <nav class="menu">
-           
+       
           <div class="prueba">
            
             <ul>
-               <a href="paginaprincipal.php"> <li>Inicio</li> </a>
+               <a href="paginaprincipal.php"> <li style="background: rgba(0,0,0,0.5);" >Inicio</li> </a>
            
-               <a href="productos.php"> <li style="background: rgba(0,0,0,0.5);">Productos
+               <a href="productos.php"> <li>Productos
                 
        
                 </li>
                 </a>
                 
-   
-                <a href="contacto.php" id="contacto"><li>Contactos</li></a>
-                <a href="agregar.php">     <li>Agregar</li></a>
-                <a href="modificar.php">     <li>Modificar</li></a>
+                <a href="tablacompras.php" ><li>Ver compras</li></a>
+                <a href="contacto.php" ><li>Contactos</li></a>
+                <?php  if($tipo_usuario==1){
+                    ?>
+                
+                <li>Acciones
+                    
+                 <ul>
+                
+             
+                <a href="agregar.php">     <li>Agregar</li></a> 
+                <a href="modificar.php">     <li >Modificar</li></a>
+                <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
+                <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <?php   } ?>
+
+                    </ul>
+
+                
+         
+                
+                </li>
+           
+
             </ul>
     
-           
+      
      
            </div>
            
-           <div class="iconocarrito">  
+        <div class="iconocarrito">  
             
 
+    
 
-            <i class="fa-solid fa-cart-shopping" id="iconocarrito"></i>
-        
-            <?php
+
+
+        <a href="carritodecompras.php">  <i class="fa-solid fa-cart-shopping" id="iconocarrito"></i></a>
+    
+
+
+        <?php
            if(isset($_SESSION['carrito']))
            {
         
@@ -84,19 +145,21 @@ $usuario=$_SESSION['username'];
            
            ?>
 
-            </div>
-    
+
+
+        </div>
+         
+        
+      
+
         </nav>
         
        
   
         
     </header>
-
-
-
-
-
+	 
+	 
 
 
 <section>

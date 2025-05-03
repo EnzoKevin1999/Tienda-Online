@@ -14,7 +14,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 <!DOCTPYPE html>
 <html lang= "es">
  <head> 
-    <title>VENTA DE ZAPATILLAS>>></title>
+    <title>Detalle Producto</title>
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,34 +29,13 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 </head>
 
 <body bgcolor="white">              
-   <!--   <header>
-          <div class= "header">
-		      <img src="CALZADO URBANO LUNA.jpg" width="200" heigth="100">
-		      <br>
-		     
-		
-				 <ul class="navbar">
-					 <li><a href="Quienes somos.html">Quienes somos</a></li>
-                     <li><a href="Entregas.html">Entregas</a></li>
-                     <li><a href="Medios de pago.html">Medios de pago</a></li>
-	     		     <li><a href="Contacto (deja tu comentario).html">Contacto (deja tu comentario)</a></li>
-					 <center><h1> CALZADO URBANO LUNA </h1></center>
-		             <center><p> "SIEMPRE EN MOVIMIENTO" </p></center>
-				  </ul>
-			  </nav>  
-		 </div>	
-	 </header>		  -->
-	 
-	 
-	 
-	 
-	 
+ 
 	 
 	 
      <header>
     
  
-    
+     <div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -88,11 +67,29 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="tablacompras.php" id="contacto"><li>Ver compras</li></a>
                 <a href="contacto.php" id="contacto"><li>Contactos</li></a>
 
+
                 <?php  if($tipo_usuario==1){
                     ?>
+                
+
+                <li>Acciones
+                    
+                 <ul>
+                
+             
                 <a href="agregar.php">     <li>Agregar</li></a> 
                 <a href="modificar.php">     <li >Modificar</li></a>
+                <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
+                <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
+
+                    </ul>
+
+                
+         
+                
+                </li>
 
             </ul>
     

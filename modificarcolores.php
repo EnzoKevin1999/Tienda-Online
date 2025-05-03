@@ -34,7 +34,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.1.2-web/css/all.css"> 
     
-    <title>Productos</title>
+    <title>Modificar Colores</title>
 </head>
 <body>
     
@@ -42,7 +42,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 <header>
     
  
-    
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -85,6 +85,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>

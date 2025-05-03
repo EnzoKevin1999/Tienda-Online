@@ -59,7 +59,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
      <header>
     
  
-  
+     <div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -69,11 +69,15 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
        
   
       </a>
+   
         
         <?php  echo "<p style='color:white;font-size: 30px;font-weight: 600;width:25%;'>Bienvenido  $usuario </p>";           ?>
+        
         </figure>
+
+        
         <nav class="menu">
-           
+       
           <div class="prueba">
            
             <ul>
@@ -99,6 +103,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>
@@ -111,7 +116,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 
             </ul>
     
-         
+      
      
            </div>
            
@@ -147,7 +152,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
         </div>
          
         
-
+      
 
         </nav>
         

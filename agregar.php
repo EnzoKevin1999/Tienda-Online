@@ -4,6 +4,8 @@ session_start();
 $usuario=$_SESSION['username'];
 
 $tipo_usuario=$_SESSION['tipo_usuario'];
+
+
 ?>
 
 
@@ -20,7 +22,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.1.2-web/css/all.css"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Productos</title>
+    <title>Agregar Productos</title>
 </head>
 <body>
     
@@ -28,7 +30,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 <header>
     
  
-  
+<div style="float:right"><a href="cerrarsesion.php">Cerrar Sesion</a></div>
     
        
        
@@ -71,6 +73,7 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
                 <a href="modificar.php">     <li >Modificar</li></a>
                 <a href="agregarcolores.php">     <li >Agregar Colores</li></a>
                 <a href="agregartalles.php">     <li >Agregar Talles</li></a>
+                <a href="agregarmarca.php">     <li >Agregar Marca</li></a>
                 <?php   } ?>
 
                     </ul>
@@ -225,12 +228,31 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 
   <div class="form-group">
 
-    <label for="Correo" class="formulario__label__agregar">
+  <div class="div__file">
+  <label for="Correo" class="formulario__label__agregar">
+ 
 
-      Imagen:
 
-      <input type="file" name="archivo" id="archivo" size="100px" class="form-control" >
+  <input type="hidden" name="imagen_actual" value=""/>
+  
+
+      <input type="file" name="archivo" id="archivo" size="100px" class="inputfile" id="inputfile" value="<?php echo $f['imagen']; ?>" onchange="mostrarVistaPrevia(event)">
+      <label for="archivo" class="botonfile"><i class="fa fa-upload"></i> Elegir archivo</label>
+      
+      
+      </div>
+      <?php if (!empty($f['imagen'])): ?>
+    <img src="productos/<?php echo $f['imagen']; ?>" width="150" alt="Imagen actual" id="imagen-previa">
+<?php else: ?>
+
+    <img id="imagen-previa" style="display: none;" width="150" alt="Vista previa">
+<?php endif; ?>
+      <br>
+      <span id="nombre-archivo" class="nombrearchivo"></span>
     </label>
+
+</label>
+  </div>
 
 
   </div>
@@ -596,7 +618,31 @@ $tipo_usuario=$_SESSION['tipo_usuario'];
 </footer> 
 
 
+<script>
+function mostrarVistaPrevia(event) {
+ 
+    const archivo = event.target.files[0];
+    const vistaPrevia = document.getElementById('imagen-previa');
+    const nombreArchivo = document.getElementById('nombre-archivo');
 
+    if (archivo) {
+        const lector = new FileReader();
+        lector.onload = function(e) {
+            vistaPrevia.src = e.target.result;
+            vistaPrevia.style.display = 'block';
+        };
+        lector.readAsDataURL(archivo);
+
+ 
+        nombreArchivo.textContent = archivo.name;
+    } else {
+        vistaPrevia.src = '';
+        vistaPrevia.style.display = 'none';
+        nombreArchivo.textContent = '';
+    }
+}
+
+</script>
 			
 </body>
 </html>
