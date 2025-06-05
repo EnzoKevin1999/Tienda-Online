@@ -38,3 +38,5 @@ JavaScript para validaciones y dinamismo en frontend
 
 HTML y CSS para estructura y estilos
 
+👉 Ver video en Linkedin : https://www.linkedin.com/feed/update/urn:li:activity:7324180910398926848/
+
